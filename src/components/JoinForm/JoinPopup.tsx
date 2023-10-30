@@ -25,7 +25,7 @@ const JoinPopup = () => {
 			)}>
 			<div
 				onClick={closePopup}
-				className='w-full h-full bg-black bg-opacity-50 fixed'
+				className='w-full h-full bg-black bg-opacity-50 fixed top-0 left-0'
 			/>
 
 			<div className='relative z-10 w-fit h-fit bg-white px-13 py-10 flex items-center gap-10 flex-col'>

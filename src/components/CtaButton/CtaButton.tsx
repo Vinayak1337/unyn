@@ -8,6 +8,7 @@ const CtaButton: React.FC<CtaBtnProps> = ({
 	href,
 	fullWidth = false,
 	className: extraCls,
+	noScroll = false,
 	...restProps
 }) => {
 	const className = clsx(
@@ -23,7 +24,7 @@ const CtaButton: React.FC<CtaBtnProps> = ({
 
 	if (href)
 		return (
-			<Link className={className} href={href}>
+			<Link className={className} href={href} scroll={!noScroll}>
 				{children}
 			</Link>
 		);
@@ -50,4 +51,5 @@ type CtaBtnProps = {
 	children: React.ReactNode;
 	reverseColor?: boolean;
 	fullWidth?: boolean;
+	noScroll?: boolean;
 } & (WithLink | ButtonProps);
