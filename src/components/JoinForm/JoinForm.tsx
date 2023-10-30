@@ -49,7 +49,7 @@ const JoinForm = () => {
 				placeholder='Enter your college name'
 			/>
 
-			<CtaButton type='submit'>Submit</CtaButton>
+			<CtaButton fullWidth type='submit'>Join</CtaButton>
 		</form>
 	);
 };

@@ -1,16 +1,16 @@
 import { SECRETS } from '@lib/config';
 import nodemailer from 'nodemailer';
 
-const requioreProperties: { [x: string]: string } = {
+const requireProperties: { [x: string]: string } = {
 	SMPT_HOST: 'Missing SMTP host',
 	SMPT_PORT: 'Missing SMTP port',
 	SMPT_USER: 'Missing SMTP user',
 	SMPT_PASS: 'Missing SMTP password'
 };
 
-Object.keys(requioreProperties).forEach(key => {
+Object.keys(requireProperties).forEach(key => {
 	if (!SECRETS[key]) {
-		throw new Error(requioreProperties[key]);
+		throw new Error(requireProperties[key]);
 	}
 });
 

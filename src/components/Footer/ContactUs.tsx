@@ -4,7 +4,7 @@ import Link from 'next/link';
 import ContactForm from './ContactForm';
 
 const ContactUs = () => (
-	<div className='w-full max-w-6xl px-1.5 flex justify-between relative -bottom-40'>
+	<div className='wrapper flex justify-between relative -bottom-40'>
 		{/* Contact Left */}
 		<div className='flex flex-col gap-8'>
 			{/* Top */}

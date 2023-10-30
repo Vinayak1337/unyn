@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Source_Sans_3 } from 'next/font/google';
-import './globals.css';
+import './globals.scss';
 import Navbar from '@ui/Navbar/Navbar';
 import Footer from '@ui/Footer/Footer';
 import JoinPopup from '@ui/JoinForm/JoinPopup';

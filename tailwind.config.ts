@@ -61,10 +61,17 @@ const config: Config = {
 			},
 			spacing: {
 				13: '3.25rem',
+				15: '3.75rem',
 				21: '5.25rem',
 				22: '5.5rem',
 				23: '5.75rem',
 				24: '6rem',
+				33: '8.25rem',
+				34: '8.5rem',
+				35: '8.75rem',
+				37: '9.25rem',
+				38: '9.5rem',
+				39: '9.75rem',
 				45: '11.25rem',
 				46: '11.5rem',
 				47: '11.75rem',
@@ -78,7 +85,7 @@ const config: Config = {
 				68: '17rem',
 				69: '17.25rem',
 				70: '17.5rem',
-				71: '17.75rem',
+				71: '17.75rem'
 			},
 			borderRadius: {
 				xlm: '0.625rem'

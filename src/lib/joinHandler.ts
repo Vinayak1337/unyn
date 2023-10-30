@@ -1,5 +1,5 @@
 import { JoinSchema } from './actions';
-import { redirect } from 'next/navigation';
+import { RedirectType, redirect } from 'next/navigation';
 import { promiseToast } from './promise-toast';
 
 export type State = {
@@ -26,7 +26,7 @@ export const joinCommunity = async (_: State, formData: FormData) => {
 			message: 'Missing Fields.'
 		};
 
-	promiseToast('join-comminuty', 'Sending...');
+	promiseToast('join-community', 'Sending...');
 
 	const response = await fetch('/join-community', {
 		method: 'POST',
@@ -39,7 +39,7 @@ export const joinCommunity = async (_: State, formData: FormData) => {
 	const data = await response.json();
 
 	if (response.status !== 200) {
-		promiseToast('join-comminuty', data.message, 'rejected');
+		promiseToast('join-community', data.message, 'rejected');
 
 		return {
 			errors: data.errors,
@@ -47,7 +47,7 @@ export const joinCommunity = async (_: State, formData: FormData) => {
 		};
 	}
 
-	promiseToast('join-comminuty', 'Sent Successfully!', 'resolved');
+	promiseToast('join-community', 'Sent Successfully!', 'resolved');
 
-	redirect('/');
+	redirect('/', RedirectType.replace);
 };

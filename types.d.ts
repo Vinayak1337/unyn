@@ -12,3 +12,9 @@ interface WithChildren {
 	href?: __next_route_internal_types__.RouteImpl<string>;
 	label?: string;
 }
+
+interface BannerCarouselData {
+	image: string;
+	title: string;
+	description: string;
+}

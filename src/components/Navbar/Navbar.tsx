@@ -5,8 +5,8 @@ import NavDrop from './NavDrop';
 import CtaButton from '@ui/CtaButton/CtaButton';
 
 const Navbar = () => (
-	<nav className='mt-10 flex justify-center w-full'>
-		<div className='w-full max-w-6xl px-1.5 flex justify-between items-center'>
+	<nav className='mt-10 center-container'>
+		<div className='wrapper flex justify-between items-center'>
 			{/* Left Nav */}
 			<div className='flex gap-12 items-center'>
 				<NavItem href='/'>

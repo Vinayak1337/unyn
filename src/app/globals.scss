@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.center-container {
+		@apply w-full flex justify-center;
+	}
+
+	.wrapper {
+		@apply w-full max-w-6xl px-1.5;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}

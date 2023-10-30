@@ -35,7 +35,7 @@ const Subscribe = () => {
 			<CtaButton
 				className='border-secondary-300 text-secondary-300'
 				type='submit'
-				revserseColor>
+				reverseColor>
 				Subscribe
 			</CtaButton>
 		</form>
