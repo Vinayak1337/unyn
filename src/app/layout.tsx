@@ -24,7 +24,7 @@ export default function RootLayout({
 	return (
 		<html lang='en' className='scroll-smooth'>
 			<body
-				className={`relative flex flex-col w-screen min-h-screen overflow-x-hidden ${sourceSans.className}`}>
+				className={`relative scroll-smooth flex flex-col w-screen min-h-screen overflow-x-hidden ${sourceSans.className}`}>
 				<Navbar />
 				<JoinPopup />
 				<ToastContainer position='top-right' />
