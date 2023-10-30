@@ -1,5 +1,5 @@
 import { SubscribeSchema } from './actions';
-import { redirect } from 'next/navigation';
+import { RedirectType, redirect } from 'next/navigation';
 import { promiseToast } from './promise-toast';
 
 export type State = {
@@ -43,5 +43,5 @@ export const SubscribeReducer = async (_: State, formData: FormData) => {
 
 	promiseToast('subscribe-email', 'Subscribed Successfully!', 'resolved');
 
-	redirect('/');
+	redirect('/', RedirectType.replace);
 };

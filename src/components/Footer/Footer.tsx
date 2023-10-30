@@ -2,15 +2,16 @@ import Logo from '@ui/Logo/Logo';
 import ContactUs from './ContactUs';
 import Subscribe from './Subscribe';
 import Link from 'next/link';
+import FooterMenu from './FooterMenu';
 
 const Footer = () => (
 	<footer
 		id='contact-us'
-		className='w-full flex flex-col items-center relative bottom-40 self-end'>
+		className='w-full flex flex-col items-center relative self-end'>
 		<ContactUs />
 
-		<div className='bg-secondary-300 w-full flex justify-center'>
-			<div className='w-full max-w-6xl px-1.5 flex flex-col gap-8 text-white pt-62 pb-20'>
+		<div className='bg-secondary-300 center-container'>
+			<div className='wrapper flex flex-col gap-8 text-white pt-62 pb-20'>
 				{/* Top */}
 				<div className='flex justify-between'>
 					{/* Left */}
@@ -20,7 +21,7 @@ const Footer = () => (
 						<div className='flex flex-col gap-4'>
 							<p className='text-lg leading-snug'>
 								Stay up to date on the latest features and releases by joining
-								our newslatter.
+								our newsletter.
 							</p>
 							<Subscribe />
 							<p className='text-sm'>
@@ -31,7 +32,7 @@ const Footer = () => (
 					</div>
 
 					{/* Right */}
-					<div></div>
+					<FooterMenu />
 				</div>
 
 				{/* Bottom */}

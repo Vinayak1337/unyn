@@ -1,5 +1,5 @@
 import { ContactSchema } from './actions';
-import { redirect } from 'next/navigation';
+import { redirect, RedirectType } from 'next/navigation';
 import { promiseToast } from './promise-toast';
 
 export type State = {
@@ -47,5 +47,5 @@ export const ContactReducer = async (_: State, formData: FormData) => {
 
 	promiseToast('contact-us', 'Sent Successfully!', 'resolved');
 
-	redirect('/');
+	redirect('/', RedirectType.replace);
 };

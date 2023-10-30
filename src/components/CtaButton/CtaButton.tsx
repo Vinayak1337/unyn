@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const CtaButton: React.FC<CtaBtnProps> = ({
 	children,
-	revserseColor = false,
+	reverseColor = false,
 	href,
 	fullWidth = false,
 	className: extraCls,
@@ -13,8 +13,8 @@ const CtaButton: React.FC<CtaBtnProps> = ({
 	const className = clsx(
 		'h-12 flex justify-center items-center text-lg font-normal leading-snug',
 		{
-			'bg-brand-300 text-white border border-white': !revserseColor,
-			'bg-white text-brand-300 border border-brand-300': revserseColor,
+			'bg-brand-300 text-white border border-white': !reverseColor,
+			'bg-white text-brand-300 border border-brand-300': reverseColor,
 			'w-full rounded-xlm': fullWidth,
 			'w-44 rounded-[3rem]': !fullWidth
 		},
@@ -48,6 +48,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 type CtaBtnProps = {
 	children: React.ReactNode;
-	revserseColor?: boolean;
+	reverseColor?: boolean;
 	fullWidth?: boolean;
 } & (WithLink | ButtonProps);
