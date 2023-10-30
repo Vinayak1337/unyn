@@ -1,23 +1,17 @@
-import { JoinSchema } from './actions';
+import { SubscribeSchema } from './actions';
 import { redirect } from 'next/navigation';
 import { promiseToast } from './promise-toast';
 
 export type State = {
 	errors?: {
 		email?: string[];
-		name?: string[];
-		college?: string[];
-		phone?: string[];
 	};
 	message?: string | null;
 };
 
-export const joinCommunity = async (_: State, formData: FormData) => {
-	const validatedFields = JoinSchema.safeParse({
-		name: formData.get('name'),
-		email: formData.get('email'),
-		college: formData.get('college'),
-		phone: formData.get('phone')
+export const SubscribeReducer = async (_: State, formData: FormData) => {
+	const validatedFields = SubscribeSchema.safeParse({
+		email: formData.get('email')
 	});
 
 	if (!validatedFields.success)
@@ -26,9 +20,9 @@ export const joinCommunity = async (_: State, formData: FormData) => {
 			message: 'Missing Fields.'
 		};
 
-	promiseToast('join-comminuty', 'Sending...');
+	promiseToast('subscribe-email', 'Subscribing...');
 
-	const response = await fetch('/join-community', {
+	const response = await fetch('/subscribe', {
 		method: 'POST',
 		body: JSON.stringify(validatedFields.data),
 		headers: {
@@ -39,7 +33,7 @@ export const joinCommunity = async (_: State, formData: FormData) => {
 	const data = await response.json();
 
 	if (response.status !== 200) {
-		promiseToast('join-comminuty', data.message, 'rejected');
+		promiseToast('subscribe-email', data.message, 'rejected');
 
 		return {
 			errors: data.errors,
@@ -47,7 +41,7 @@ export const joinCommunity = async (_: State, formData: FormData) => {
 		};
 	}
 
-	promiseToast('join-comminuty', 'Sent Successfully!', 'resolved');
+	promiseToast('subscribe-email', 'Subscribed Successfully!', 'resolved');
 
 	redirect('/');
 };

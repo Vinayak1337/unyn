@@ -4,6 +4,8 @@ import './globals.css';
 import Navbar from '@ui/Navbar/Navbar';
 import Footer from '@ui/Footer/Footer';
 import JoinPopup from '@ui/JoinForm/JoinPopup';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const sourceSans = Source_Sans_3({
 	subsets: ['latin']
@@ -25,6 +27,7 @@ export default function RootLayout({
 				className={`relative flex flex-col w-screen min-h-screen overflow-x-hidden ${sourceSans.className}`}>
 				<Navbar />
 				<JoinPopup />
+				<ToastContainer position='top-right' />
 				{children}
 				<Footer />
 			</body>
