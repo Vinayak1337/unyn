@@ -2,6 +2,7 @@
 import clsx from 'clsx';
 import { FC, useState } from 'react';
 import NavItem from './NavItem';
+import { ChevronUpIcon } from '@heroicons/react/20/solid';
 
 const NavDrop: FC<NavDropProps> = ({ label, items }) => {
 	const [open, setOpen] = useState(false);
@@ -15,21 +16,12 @@ const NavDrop: FC<NavDropProps> = ({ label, items }) => {
 			onMouseLeave={togglePopup}
 			className='flex gap-1 relative'>
 			<p>{label}</p>
-			<svg
-				xmlns='http://www.w3.org/2000/svg'
-				fill='none'
-				viewBox='0 0 24 24'
-				strokeWidth={1.5}
-				stroke='currentColor'
+			<ChevronUpIcon
 				className={clsx('w-6 h-6 transition-all duration-300 ', {
 					'rotate-180': open
-				})}>
-				<path
-					strokeLinecap='round'
-					strokeLinejoin='round'
-					d='M4.5 15.75l7.5-7.5 7.5 7.5'
-				/>
-			</svg>
+				})}
+			/>
+
 			<div
 				onMouseEnter={openPopup}
 				className={clsx(

@@ -19,3 +19,25 @@ export const JoinSchema = z.object({
 		.min(1, 'Please enter your phone number.')
 		.refine(validator.isMobilePhone, 'Please enter a valid phone number.')
 });
+
+export const ContactSchema = z.object({
+	name: z
+		.string()
+		.min(1, 'Please enter your name.')
+		.min(3, 'Name should be at least 3 characters long.'),
+	email: z
+		.string()
+		.min(1, 'Please enter your email.')
+		.refine(validator.isEmail, 'Please enter a valid email address.'),
+	message: z
+		.string()
+		.min(1, 'Please enter your message.')
+		.min(10, 'Message should be at least 10 characters long.')
+});
+
+export const SubscribeSchema = z.object({
+	email: z
+		.string()
+		.min(1, 'Please enter your email.')
+		.refine(validator.isEmail, 'Please enter a valid email address.')
+});

@@ -6,33 +6,30 @@ const CtaButton: React.FC<CtaBtnProps> = ({
 	children,
 	revserseColor = false,
 	href,
+	fullWidth = false,
+	className: extraCls,
 	...restProps
 }) => {
+	const className = clsx(
+		'h-12 flex justify-center items-center text-lg font-normal leading-snug',
+		{
+			'bg-brand-300 text-white border border-white': !revserseColor,
+			'bg-white text-brand-300 border border-brand-300': revserseColor,
+			'w-full rounded-xlm': fullWidth,
+			'w-44 rounded-[3rem]': !fullWidth
+		},
+		extraCls
+	);
+
 	if (href)
 		return (
-			<Link
-				className={clsx(
-					'w-44 h-12 flex justify-center items-center text-lg font-normal leading-snug rounded-[3rem]',
-					{
-						'bg-brand-300 text-white border border-white': !revserseColor,
-						'bg-white text-brand-300 border border-brand-300': revserseColor
-					}
-				)}
-				href={href}>
+			<Link className={className} href={href}>
 				{children}
 			</Link>
 		);
 
 	return (
-		<button
-			{...restProps}
-			className={clsx(
-				'w-44 h-12 flex justify-center items-center text-lg font-normal leading-snug rounded-[3rem]',
-				{
-					'bg-brand-300 text-white border border-white': !revserseColor,
-					'bg-white text-brand-300 border border-brand-300': revserseColor
-				}
-			)}>
+		<button {...restProps} className={className}>
 			{children}
 		</button>
 	);
@@ -52,4 +49,5 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 type CtaBtnProps = {
 	children: React.ReactNode;
 	revserseColor?: boolean;
+	fullWidth?: boolean;
 } & (WithLink | ButtonProps);
