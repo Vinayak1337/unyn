@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const PotentialImpact = () => (
-	<div className='wrapper flex gap-8 mt-40'>
+	<section className='wrapper flex gap-8'>
 		<div className='flex flex-col justify-center'>
 			<h1 className='text-5xl font-bold leading-[3.5rem]'>
 				Unlock Your Potential and Make a Lasting Impact with UNYN
@@ -23,7 +23,7 @@ const PotentialImpact = () => (
 			width={555}
 			height={544}
 		/>
-	</div>
+	</section>
 );
 
 export default PotentialImpact;
