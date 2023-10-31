@@ -38,6 +38,8 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({
 				return newIndex;
 			});
 
+	const changeIndex = (newIndex: number) => () => setIndex(newIndex);
+
 	return (
 		<div className='w-[555px] flex-col '>
 			<div className='flex w-full overflow-x-hidden'>
@@ -74,8 +76,9 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({
 					<div className='flex gap-0.5 self-center'>
 						{images.map((image, i) => (
 							<div
+								onClick={changeIndex(i + 1)}
 								key={image + i + 'banner-carousel-point'}
-								className={clsx('w-2 h-2 rounded-full', {
+								className={clsx('w-2 h-2 rounded-full cursor-pointer', {
 									'bg-secondary-300': i + 1 === index,
 									'bg-secondary-75': i + 1 !== index
 								})}
