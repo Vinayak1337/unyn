@@ -5,7 +5,7 @@ const IndividualYouth: React.FC<IndividualYouthProps> = ({
 	description,
 	image
 }) => (
-	<div className='wrapper flex flex-col gap-15 mt-37'>
+	<section className='wrapper flex flex-col gap-15'>
 		<div className='flex justify-between'>
 			<h1 className='text-5xl font-bold leading-[3.5rem] w-[38rem]'>
 				{titleLeft} <span className='text-secondary-300'>{titleRight}</span>
@@ -15,7 +15,7 @@ const IndividualYouth: React.FC<IndividualYouthProps> = ({
 			</p>
 		</div>
 		<Image width={1140} height={690} src={image} alt='individual-youth' />
-	</div>
+	</section>
 );
 
 export default IndividualYouth;

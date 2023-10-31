@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 // No time to implement this component with props or make reusable components
 const Empower = () => (
-	<div className='wrapper mt-40 flex flex-col gap-15 items-center'>
+	<section className='wrapper flex flex-col gap-15 items-center'>
 		{/* Top */}
 		<div className='flex flex-col gap-1 items-center'>
 			<p className='text-lg font-semibold leading-snug'>Empower</p>
@@ -49,7 +49,7 @@ const Empower = () => (
 				</Link>
 			</div>
 		</div>
-	</div>
+	</section>
 );
 
 const data = [

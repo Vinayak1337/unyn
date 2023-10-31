@@ -12,7 +12,7 @@ const Banner: React.FC<typeof homeBannerData> = ({
     learnMore,
     carousel
 }) => (
-	<div className='wrapper items-center flex gap-10'>
+	<section className='wrapper items-center flex gap-10'>
 		<div className='w-[543px] flex flex-col gap-12'>
 			<div className='flex flex-col gap-4'>
 				<h1 className='max-w- text-black text-6.5xl font-bold'>{title}</h1>
@@ -33,7 +33,7 @@ const Banner: React.FC<typeof homeBannerData> = ({
 		<BannerCarousel
 			{...carousel}
 		/>
-	</div>
+	</section>
 );
 
 export default Banner;
