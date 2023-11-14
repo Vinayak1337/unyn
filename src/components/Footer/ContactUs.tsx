@@ -33,7 +33,9 @@ const ContactUs = () => (
 );
 
 const ContactItem: React.FC<ContactItemProps> = ({ Icon, label, href }) => (
-	<Link href={encodeURIComponent(href + label) as Route} className='flex gap-5'>
+	<Link
+		href={(href + encodeURIComponent(label)) as Route}
+		className='flex gap-5'>
 		<Icon className='w-6 h-6' />
 		<p className='max-w-xs text-lg leading-snug'>{label}</p>
 	</Link>
